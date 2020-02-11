@@ -1,5 +1,5 @@
 """This is the solution for the MentorMate assignment using python"""
-class MentorMate:
+class DoubleMLetter:
     def logo_line(self,i):  # returns the symbols for one line, for one M
         result = "" # variable to hold the created line
         if i < self.m_width / 2:  # for the upper half of the logo this pattern is used
@@ -29,5 +29,5 @@ class MentorMate:
            print(self.logo_line(i))
 
 m_width = int(input()) # get the m_widthber from the console
-mm = MentorMate() # create a MentorMate class
+mm = DoubleMLetter() # create a MentorMate class
 mm.print_logo(m_width) # print the MentorMate logo
