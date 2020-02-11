@@ -37,8 +37,9 @@ class DoubleMLetter
                 + string(this->cLogoLowerDashNumber, '-')
                 + string(this->cWidth, '*')
                 + string(this->cLogoSideDashNumber, '-');
+                 this->cLogoLowerDashNumber += 2;
             }
-            
+            this->cLogoSideDashNumber -= 1;
             return oneLetterLineToBePrinted + oneLetterLineToBePrinted;
         };
     public:
@@ -69,6 +70,6 @@ int main()
 {
   int widthOfM;
   cin >> widthOfM;
-  DoubleMLetter doubleM = new DoubleMLetter(widthOfM);
-  doubleM.draw();
+  DoubleMLetter * doubleM = new DoubleMLetter(widthOfM);
+  doubleM->draw();
 }
