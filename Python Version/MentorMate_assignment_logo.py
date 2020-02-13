@@ -53,7 +53,7 @@ class DoubleMLetter:
             else: current_half_of_line += (
                      "*" * width
                      +"-" * math.floor((1 + 2 * (current_line-half)))
-                     + "*" * ((width)-current_line/2)
+                     + "*" *  (width*2 - 2 if width%2==0 else 1)
                      + "-" *   math.floor((1 + 2 * (current_line-half)))
                      + "*" * width
                      )
@@ -67,5 +67,5 @@ class DoubleMLetter:
 
 #widthInput = int(input("Write the width of the double M: "))
 doubleM = DoubleMLetter() 
-doubleM.print_logo(4)
-doubleM.alternative_print_logo(4) 
+doubleM.print_logo(3)
+doubleM.alternative_print_logo(3) 
