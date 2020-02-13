@@ -1,13 +1,14 @@
 """This is the solution for the MentorMate assignment using python"""
+import math
 class DoubleMLetter:
     def logo_line(self,current_line): 
         current_half_of_line = "" 
         if current_line < self.m_width / 2: 
             current_half_of_line = (
                      "-" * self.logoSideDashNum
-                     + "*" * self.logoStarNum\
+                     + "*" * self.logoStarNum
                      + "-" * self.logoUpperDashNum
-                     + "*" * self.logoStarNum\
+                     + "*" * self.logoStarNum
                      + "-" * self.logoSideDashNum
                      )
             self.logoUpperDashNum -= 2
@@ -16,11 +17,11 @@ class DoubleMLetter:
             self.logoStarNum -= 2
             current_half_of_line = (
                      "-" * self.logoSideDashNum
-                     + "*" * self.m_width  \
+                     + "*" * self.m_width
                      +"-" * self.logoBottomHalfDashNum
-                     + "*" * self.logoStarNum\
+                     + "*" * self.logoStarNum
                      + "-" * self.logoBottomHalfDashNum
-                     + "*" * self.m_width \
+                     + "*" * self.m_width
                      + "-" * self.logoSideDashNum
                      )
             self.logoBottomHalfDashNum += 2
@@ -39,7 +40,7 @@ class DoubleMLetter:
         
 
     def alternative_print_logo(self, width):
-        half = (width + 1) / 2
+        half = math.floor((width + 1) / 2)
         current_half_of_line = ""
         for current_line in range(width + 1):
             current_half_of_line = "-" * (width - current_line)
@@ -51,9 +52,9 @@ class DoubleMLetter:
                      )
             else: current_half_of_line += (
                      "*" * width
-                     +"-" * (1 + 2 * (current_line-current_line/2))
-                     + "*" * (width + half * 2)
-                     + "-" * (1 + 2 * (current_line-current_line/2))
+                     +"-" * math.floor((1 + 2 * (current_line-current_line/2)))
+                     + "*" * ((width + half * 2)-current_line)
+                     + "-" *  math.floor((1 + 2 * (current_line-current_line/2)))
                      + "*" * width
                      )
             current_half_of_line += "-" * (width - current_line)
@@ -64,7 +65,7 @@ class DoubleMLetter:
 
 
 
-widthInput = int(input("Write the width of the double M: "))
+#widthInput = int(input("Write the width of the double M: "))
 doubleM = DoubleMLetter() 
-doubleM.print_logo(widthInput)
-doubleM.alternative_print_logo(3) 
+doubleM.print_logo(4)
+doubleM.alternative_print_logo(4) 
