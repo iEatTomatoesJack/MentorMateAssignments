@@ -52,9 +52,9 @@ class DoubleMLetter:
                      )
             else: current_half_of_line += (
                      "*" * width
-                     +"-" * math.floor((1 + 2 * (current_line-current_line/2)))
-                     + "*" * ((width + half * 2)-current_line)
-                     + "-" *  math.floor((1 + 2 * (current_line-current_line/2)))
+                     +"-" * math.floor((1 + 2 * (current_line-half)))
+                     + "*" * ((width)-current_line/2)
+                     + "-" *   math.floor((1 + 2 * (current_line-half)))
                      + "*" * width
                      )
             current_half_of_line += "-" * (width - current_line)
